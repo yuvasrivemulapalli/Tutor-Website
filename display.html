@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>image
+	</title>
+	<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+  width: 5000px
+}
+
+
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 400px;
+  margin-top:20px;
+  margin-left: 30px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+.btn {background-color: #008CBA;}
+
+</style>
+	
+</head>
+<body>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+	<!--
+	<table id="List">
+		<tbody></tbody>
+	</table>
+	-->
+	<center><div><h4><b>Registered Courses</b></h4></div></center>
+	<div class="flex-container" id="registered_courses" style="background:green;">
+		
+	</div>
+	<br>
+	<center><div><h4><b>All Courses</b></h4></div></center>
+	<div class="flex-container" id="all_courses" class="container" style="background:yellow;">
+		
+	</div>
+
+<script src="js/firebase.js"></script>
+<script src="js/display.js"></script>
+</body>
+</html>

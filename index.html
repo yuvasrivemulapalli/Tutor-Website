@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ABC</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--icons-->
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+
+</style>
+</head>
+<script src="js/firebase.js"></script>
+<body>
+	<!-- Navbar -->
+<!--<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+    <a href="#courses" class="w3-bar-item w3-button w3-padding-large w3-hide-small">COURSES</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT US</a> 
+    <p align="right">
+    <a  href="#courses" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOGIN</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SIGN UP</a> 
+    </p>      
+  </div>
+
+  
+</div>
+
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+  <a href="#courses" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">COURSES</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT US</a>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+  <ul class="navbar-nav mr-auto">
+    	 <li class="nav-item">
+        <a class="nav-link" href="#">LOGIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">SIGNUP</a>
+      </li>
+  </ul>
+</nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="#home">HOME</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="#about">ABOUT</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="#courses">COURSES</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="#contact">CONTACT US</a>
+      </li>
+      
+      
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+      	 <a class="nav-link" href="login.html">LOGIN<span class="sr-only">(current)</span></a>
+      	 </li>
+      	 <li class="nav-item ">
+      	  <a class="nav-link" href="signup.html">SIGN UP<span class="sr-only">(current)</span></a>
+      	</li>
+
+</ul>
+    
+
+  </div>
+</nav>
+<!--matter-->
+<div class="container col-md-12" id="home" style="height: 500px;background-image: url(https://wndbookservice.com/wp-content/uploads/2019/05/Online-Tutoring003.jpg);background-position: center; background-repeat: no-repeat;background-size: cover;position:relative;margin-top: 0px;margin-bottom:0px;margin-right: 0px;
+  margin-left:0px; padding:150px;width:100%">
+	<div class="container col-md-6" style=";" >
+	<form class="form-inline ">
+  <input class="form-control form-control-lg mr-3 w-75" type="text" placeholder="Search"
+    aria-label="Search">
+  <i class="fas fa-search" aria-hidden="true"></i>
+</form>
+</div>
+ </div>
+<div id="search-courses" class="container col-md-12" style="width:100%; position:relative;margin-top:0px;margin-bottom:0px; ">
+	</div>
+ <div class="container col-md-12" id="about" style="height: 500px;background-image:url(https://cdn.wallpaperhi.com/1920x1200/20140310/wood%20textures%20wood%20texture_www.wallpaperhi.com_33.jpg);color:black;width:100%; position:relative;margin-top:0px;margin-bottom:0px; ">
+ 	<center><h2>ABOUT</h2></center>
+ 	<p></p>
+ 	
+ </div>
+  <div class="container col-md-12" id="courses" style="height: 500px;background: blue;position:relative;margin-top:0px;margin-bottom:0px;margin-right:0px;
+  margin-left:0px; padding:50px;width:100%">
+ </div>
+  <div class="container col-md-12" id='contact' style="height: 500px;background:yellow;position:relative;margin-top:0px;margin-bottom:0px;margin-right:0px;
+  margin-left:0px; padding:50px;width:100%">
+ </div>
+<!-- Footer -->
+
+<footer class="footer" style="position:relative;">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="d-flex justify-content-end">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          </a>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+		<script type="text/javascript">
+			function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+
+
+			$("#s").click(function(event){
+				if($(event.target).is('#signup')){
+					window.location="signup.html";
+				}
+				else{
+					window.location="login.html";
+				}
+			})
+		</script>
+	</div>
+</body>
+</html>
