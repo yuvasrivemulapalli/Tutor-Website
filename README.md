@@ -6,4 +6,3 @@ Operating System • Windows
 Database • Firebase
 Integrated Development Environment • Sublime Text Editor
 Languages - Html,Css,Java Script,JQuery
-Minimum Hardware Requirements • Ram: 4 GB • Hard disk space: 50 GB
